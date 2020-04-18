@@ -4,12 +4,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>AC|Random Villager</title>
         <style>
-            .villager__palette{
-                display: flex;
-                flex-direction: row;  
+            .villager{
+                width: 300px;
+                text-align: center;
+                border-style: solid;
+                border-color: steelblue;
+                border-width: 5px;
             }
 
-            .villager__palette div{
+            .villager__palette .colors{
+                display: flex;
+                flex-direction: row;  
+                width: 300px;
+                margin-left: 50px;
+            }
+
+            .villager__palette .colors div{
                 width: 50px;
                 height: 50px;
             }
@@ -18,12 +28,24 @@
                 width:700px;
             }
 
+            .villager__personality, .villager__style, .villager__catchp{
+                display: flex;
+                flex-direction: row;  
+                justify-content: space-around;
+            }
+
+            .bottom{
+                widows: 250px;
+                padding-left: 50px;
+            }
+
         </style>
     </head>
     <body>
-        <div class="src__img">
+       <!--<div class="src__img">
             <img src="./img/EVxLa9VXYAMGXqo.jpg">
-        </div>
+        </div>--> 
+        <script src="js/input.js"></script>
         <script src="js/index.js"></script>
     </body>
 </html>

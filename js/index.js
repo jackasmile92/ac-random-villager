@@ -6,30 +6,35 @@ function getRandomColor() {
     }
     return color;
   }
+ 
+var villager = document.createElement('div');
+villager.className = "villager";
 
-var randomArray = [
-    'Alligator','Anteater','Bear'
-    ,'Bird','Bull','Cat'
-    ,'Chicken','Cow','Cub'
-    ,'Deer','Dog','Duck'
-    ,'Eagle','Elephant','Frog'
-    ,'Goat','Gorilla','Hamster'
-    ,'Hippo','Horse','Kangaroo'
-    ,'Koala','Lion','Monkey'
-    ,'Mouse','Octopus','Ostrich'
-    ,'Penguin','Pig','Rabbit'
-    ,'Rhino','Sheep','Squirrel'
-    ,'Tiger','Wolf'
-]; 
 var firstRandomElement = randomArray[Math.floor(Math.random()*randomArray.length)];
 var avatar = document.createElement('div');
 avatar.className = "villager__species";
-avatar.innerHTML = firstRandomElement;
+var title = document.createElement('div');
+title.className = "villager__title";
 
-document.body.appendChild(avatar);
+title.innerHTML = firstRandomElement ;
+avatar.appendChild(title);
+
+let imageTag = document.createElement('img');
+imageTag.src = './img/' + firstRandomElement + '.png';
+
+avatar.appendChild(imageTag);
+villager.appendChild(avatar);
+//document.body.appendChild(avatar);
 
 var color_pal =  document.createElement('div');
 color_pal.className = "villager__palette";
+
+var pal =  document.createElement('div');
+pal.className = "palette";
+pal.innerHTML = "Palette:" ;
+
+var colors = document.createElement('div');
+colors.className = "colors";
 
 var color_1 =  document.createElement('div');
 var color_2 =  document.createElement('div');
@@ -41,154 +46,61 @@ color_2.style.backgroundColor = getRandomColor();
 color_3.style.backgroundColor = getRandomColor();
 color_4.style.backgroundColor = getRandomColor();
 
-color_pal.appendChild(color_1);
-color_pal.appendChild(color_2);
-color_pal.appendChild(color_3);
-color_pal.appendChild(color_4);
+colors.appendChild(color_1);
+colors.appendChild(color_2);
+colors.appendChild(color_3);
+colors.appendChild(color_4);
 
-document.body.appendChild(color_pal);
+color_pal.appendChild(pal);
+color_pal.appendChild(colors);
 
-var personalities =[
-'Sisterly'
-,'Snooty'
-,'Cranky'
-,'Smug'
-,'Peppy'
-,'Normal'
-,'Lazy'
-,'Jock'
-];
+var bottom = document.createElement('div');
+bottom.className = "villager__bottom";
+
+bottom.appendChild(color_pal);
+
 var personality = personalities[Math.floor(Math.random()*personalities.length)];
 var pers = document.createElement('div');
 pers.className = "villager__personality";
-pers.innerHTML = personality;
 
-document.body.appendChild(pers);
+var ps1 = document.createElement('div');
+ps1.innerHTML = "Personality: ";
 
+var ps2 = document.createElement('div');
+ps2.innerHTML = personality;
+pers.appendChild(ps1);
+pers.appendChild(ps2);
 
-var styles =[
-    'Sporty', 'Cute', 'Iconic', 'RocknRoll', 'Official'
-    , 'Ornate', 'Flashy', 'Modern', 'Historical', 'Basic'
-];
+bottom.appendChild(pers);
 
 var style = styles[Math.floor(Math.random()*styles.length)];
 var st = document.createElement('div');
 st.className = "villager__style";
-st.innerHTML = style;
 
-document.body.appendChild(st);
-//http://www.animalcrossingcommunity.com/Topic/4468132/1/Villagers_catchphrase_List
-catchphr =[
-    ,'Tubby/tubbo'
-    ,'chubby/chubbo'
-    ,'Buddy/buddy boy'
-    ,'chimp/chimpy/chimpet'
-    , 'Honey,hunny'
-    ,'Neighbor'
-    ,'Corn hole'
-    ,'Comrad'
-    ,'Boss'
-    ,'sly'
-    ,'slick'
-    ,'Hot stuff'
-    ,'Snowflake'
-    ,'Bear'
-    ,'Puddin pop'
-    ,'Show off'
-    ,'Cub'
-    ,'baby'
-    ,'idiot'
-    ,'Colt'
-    ,'Pup/puppy'
-    ,'Kitten'
-    ,'Shrimp'
-    ,'Smarty'
-    ,'Calf'
-    ,'dummy'
-    ,'Sweetie'
-    ,'Nice guy/Nice girl'
-    ,'Mate'
-    ,'Sweet heart'
-    ,'sugar'
-    ,'My friend'
-    ,'Angle'
-    ,'Pumpkin'
-    ,'Dude/Dood'
-    ,'Queen'
-    ,'Snow angle'
-    ,'bum'
-    ,'man'
-    ,'punk'
-    ,'Bacon'
-    ,'Chocolate'
-    ,'Caramel'
-    ,'Hick/Hicker'
-    ,'Icy'
-    ,'Sonny'
-    ,'Dog'
-    ,'Goofball'
-    ,'Clown'
-    ,'Nerd'
-    ,'Hill billy'
-    ,'Captain'
-    ,'Swindler'
-    ,'Poser'
-    ,'Phony'
-    ,'Derr'
-    ,'Honey bun'
-    ,'Boy'
-    ,'girl'
-    ,'Frosting'
-    ,'Monster'
-    ,'Icing'
-    ,'Emerald'
-    ,'Kitty cat'
-    ,'Handsome'
-    ,'Pertty'
-    ,'Squeaker'
-    ,'Smelly'
-    ,'Piggy'
-    ,'fatso'
-    ,'Sneaky'
-    ,'Tiny'
-    ,'Prince'
-    ,'Princess'
-    ,'Greaser'
-    ,'Hoe'
-    ,'Cookie'
-    ,'Muffin'
-    ,'Peanut'
-    ,'coco'
-    ,'flower'
-    ,'Noob'
-    ,'cup cake'
-    ,'Dead weight'
-    ,'Meat bag'
-    ,'Girl friend'
-    ,'Smiggs'
-    ,'Bro'
-    ,'sis'
-    ,'Hooser'
-    ,'Pal'
-    ,'Work horse'
-    ,'B-B-buddy'
-    ,'Foxy'
-    ,'ace'
-    ,'Bender'
-    ,'soul mate'
-    ,'Smoker'
-    ,'Joker'
-    ,'Speedy'
-    ,'hero'
-    ,'Its a mii'
-    ,'Mother'
-    ,'Father'
-    ,'Killer'
-];
+var st1 = document.createElement('div');
+st1.innerHTML = "Style: ";
+
+var st2 = document.createElement('div');
+st2.innerHTML = style;
+st.appendChild(st1);
+st.appendChild(st2);
+
+bottom.appendChild(st);
+
 
 var catchph = catchphr[Math.floor(Math.random()*catchphr.length)];
 var cp = document.createElement('div');
 cp.className = "villager__catchp";
-cp.innerHTML = catchph;
 
-document.body.appendChild(cp);
+var cp1 = document.createElement('div');
+cp1.innerHTML = "Catchphrase: ";
+
+var cp2 = document.createElement('div');
+cp2.innerHTML = catchph;
+cp.appendChild(cp1);
+cp.appendChild(cp2);
+
+bottom.appendChild(cp);
+villager.appendChild(bottom);
+
+document.body.appendChild(villager);
